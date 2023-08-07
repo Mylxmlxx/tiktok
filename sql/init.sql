@@ -74,7 +74,7 @@ create table `like`
 );
 
 
-drop table comment
+drop table comment;
 
 
 create table comment

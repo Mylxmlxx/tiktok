@@ -2,6 +2,23 @@ spring:
   cloud:
     gateway:
       routes:
+
+        - id: tiktok-video
+          uri: http://127.0.0.1:8085
+          predicates:
+            - Path=/video/**
+        - id: tiktok-comment
+          uri: http://127.0.0.1:8084
+          predicates:
+            - Path=/comment/**
+        - id: tiktok-message
+          uri: http://127.0.0.1:8083
+          predicates:
+            - Path=/message/**
+        - id: tiktok-relation
+          uri: http://127.0.0.1:8082
+          predicates:
+            - Path=/relation/**,/favorite/**
         - id: tiktok-user
           uri: http://127.0.0.1:8081
           predicates:
