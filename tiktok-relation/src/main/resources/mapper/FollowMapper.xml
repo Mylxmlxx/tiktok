@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yzy.tiktokrelation.mapper.FollowMapper">
+
+    <resultMap id="BaseResultMap" type="com.yzy.tiktokcommon.entity.domain.Follow">
+            <id property="id" column="id" jdbcType="BIGINT"/>
+            <result property="createdAt" column="created_at" jdbcType="BIGINT"/>
+            <result property="updatedAt" column="updated_at" jdbcType="BIGINT"/>
+            <result property="deletedAt" column="deleted_at" jdbcType="BIGINT"/>
+            <result property="followId" column="follow_id" jdbcType="BIGINT"/>
+            <result property="followerId" column="follower_id" jdbcType="BIGINT"/>
+            <result property="isFollow" column="is_follow" jdbcType="TINYINT"/>
+            <result property="isMutual" column="is_mutual" jdbcType="TINYINT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,created_at,updated_at,
+        deleted_at,follow_id,follower_id,
+        is_follow,is_mutual
+    </sql>
+</mapper>

@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: tiktok-user
+          uri: http://127.0.0.1:8081
+          predicates:
+            - Path=/user/**
+server:
+  port: 8099
