@@ -7,7 +7,6 @@
         <artifactId>tiktok</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.yzy</groupId>
     <artifactId>tiktok-comment</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tiktok-comment</name>
@@ -17,7 +16,11 @@
     </properties>
     <dependencies>
 
-
+        <!--nacos-discovery-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+        </dependency>
         <!--nacos-->
         <dependency>
             <groupId>org.apache.dubbo</groupId>

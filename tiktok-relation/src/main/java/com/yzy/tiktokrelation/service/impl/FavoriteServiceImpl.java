@@ -51,7 +51,7 @@ public class FavoriteServiceImpl extends ServiceImpl<FavoriteMapper, Favorite>
 
     @Override
     public List<Video> list(long userId) {
-            LambdaQueryWrapper<Favorite> wrapper = new LambdaQueryWrapper<>();
+        LambdaQueryWrapper<Favorite> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(Favorite::getUserId, userId).eq(Favorite::getStatus, 1);
         List<Long> videoIds = list(wrapper).stream().map(Favorite::getVideoId).collect(Collectors.toList());
         List<Video> videos = rpcVideoService.getVideoListByIds(videoIds);

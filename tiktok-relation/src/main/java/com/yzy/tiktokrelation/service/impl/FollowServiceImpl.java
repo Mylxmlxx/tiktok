@@ -64,6 +64,7 @@ public class FollowServiceImpl extends ServiceImpl<FollowMapper, Follow>
     public List<User> getFriendList(String userId) {
         LambdaQueryWrapper<Follow> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(Follow::getIsMutual, 1);
+        wrapper.eq(Follow::getFollowId, Long.parseLong(userId)).or().eq(Follow::getFollowerId, Long.parseLong(userId));
         List<Follow> list = list(wrapper);
         List<Long> ids = list.stream()
                 .map(Follow::getFollowerId)

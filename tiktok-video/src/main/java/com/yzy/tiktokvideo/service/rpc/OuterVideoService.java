@@ -1,11 +1,13 @@
 package com.yzy.tiktokvideo.service.rpc;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.yzy.tiktokcommon.entity.domain.Video;
 import com.yzy.tiktokcommon.rpcservice.RpcVideoService;
 import com.yzy.tiktokvideo.service.VideoService;
 import org.apache.dubbo.config.annotation.DubboService;
 
 import javax.annotation.Resource;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -26,6 +28,9 @@ public class OuterVideoService implements RpcVideoService {
 
     @Override
     public List<Video> getVideoListByIds(List<Long> ids) {
+        if (ids.isEmpty()) {
+            return Collections.emptyList();
+        }
         return videoService.listByIds(ids);
     }
 }

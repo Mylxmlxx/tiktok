@@ -8,6 +8,12 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/tiktok?useSSL=True&serverTimezone=UTC
     username: root
     password: 2002
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+
 
 mybatis-plus:
   configuration:
