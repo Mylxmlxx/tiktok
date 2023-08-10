@@ -24,3 +24,7 @@ mybatis-plus:
       logic-delete-field: isDelete
       logic-delete-value: 1
       logic-not-delete-value: 0
+logging:
+  level:
+    org.springframework.web: info
+    org.springframework.cloud: info
