@@ -1,3 +1,4 @@
+## spring
 server:
   port: 8085
 spring:
@@ -8,11 +9,12 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/tiktok?useSSL=True&serverTimezone=UTC
     username: root
     password: 2002
+  ## cloud
   cloud:
     nacos:
       discovery:
         server-addr: localhost:8848
-
+  ## servlet
   servlet:
     multipart:
       enabled: true
@@ -20,6 +22,7 @@ spring:
       max-request-size: 400MB
 
 
+## mybatis-plus
 mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
@@ -30,6 +33,7 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
 
+## dubbo
 dubbo:
   application:
     name: tiktok-video
